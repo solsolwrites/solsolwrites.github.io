@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>솔솔글방 졸업전시 · 2021—2026</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="reading.css" />
+</head>
+<body>
+  <template id="__bundler_thumbnail" data-bg-color="#25342a">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#25342a"/>
+      <path d="M0 560 C260 500 420 540 620 528 C840 516 1000 560 1200 540 L1200 800 L0 800 Z" fill="#3f5240" fill-opacity="0.55"/>
+      <path d="M0 640 C240 600 360 636 600 624 C840 612 1010 648 1200 636 L1200 800 L0 800 Z" fill="#1d2a22"/>
+      <g stroke="#eef0e9" stroke-opacity="0.85" fill="none" stroke-width="6" stroke-linecap="round">
+        <path d="M600 520 C600 420 600 320 600 240" stroke-width="8"/>
+        <path d="M600 470 C560 450 530 455 500 435"/>
+        <path d="M600 470 C640 450 670 455 700 435"/>
+        <path d="M600 410 C560 390 530 395 500 375"/>
+        <path d="M600 410 C640 390 670 395 700 375"/>
+        <path d="M600 350 C566 332 540 336 514 318"/>
+        <path d="M600 350 C634 332 660 336 686 318"/>
+        <path d="M600 295 C572 280 552 284 532 268"/>
+        <path d="M600 295 C628 280 648 284 668 268"/>
+      </g>
+      <text x="600" y="700" text-anchor="middle" fill="#eef0e9" font-family="serif" font-size="58" letter-spacing="8">솔솔글방</text>
+    </svg>
+  </template>
+
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script src="data.js"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="forest.jsx"></script>
+  <script type="text/babel" src="home.jsx"></script>
+  <script type="text/babel" src="reading.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>

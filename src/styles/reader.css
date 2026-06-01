@@ -1,0 +1,168 @@
+/* 글 조회(읽기) 화면 — 좌측 짙은 초록 사이드바 + 우측 본문 */
+
+.reader {
+  position: relative; z-index: 3;
+  display: grid; grid-template-columns: 380px 1fr;
+  min-height: 100vh; background: var(--paper);
+  animation: readerIn .7s var(--ease);
+}
+@keyframes readerIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ── 좌측 사이드바 ── */
+.reader-aside {
+  position: sticky; top: 0; align-self: start;
+  height: 100vh; background: var(--hero-bg); color: var(--hero-fg);
+  padding: 44px 40px; display: flex; flex-direction: column;
+  overflow: hidden auto;
+  transition: background .8s var(--ease);
+}
+.reader-aside .aside-grain {
+  position: absolute; inset: 0; opacity: .4; mix-blend-mode: soft-light; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.reader-aside .sprig { position: absolute; right: -30px; bottom: -20px; opacity: .5; }
+.back-btn {
+  position: relative; z-index: 2;
+  display: inline-flex; align-items: center; gap: 10px; align-self: flex-start;
+  background: none; border: none; cursor: pointer; padding: 8px 0;
+  color: var(--hero-fg); font-family: var(--serif); font-size: 13px; letter-spacing: .2em;
+  opacity: .85; transition: opacity .4s, gap .4s var(--ease);
+}
+.back-btn:hover { opacity: 1; gap: 16px; }
+.aside-author {
+  position: relative; z-index: 2; margin-top: auto;
+  display: flex; align-items: center; gap: 14px;
+}
+.aside-author .am { width: 56px; height: 56px; border-radius: 3px; flex: none; }
+.aside-author .an { font-family: var(--display); font-size: 22px; }
+.aside-author .al { font-family: var(--serif); font-size: 12px; opacity: .65; letter-spacing: .05em; }
+.aside-title {
+  position: relative; z-index: 2; margin-top: 26px;
+  font-family: var(--display); font-size: clamp(30px,3vw,46px); line-height: 1.18;
+  letter-spacing: .01em;
+  overflow-wrap: anywhere;
+}
+.aside-meta {
+  position: relative; z-index: 2; margin-top: 22px;
+  display: flex; flex-wrap: wrap; gap: 10px 20px; font-family: var(--serif); font-size: 12.5px;
+  letter-spacing: .15em; opacity: .7;
+}
+.aside-divider { position: relative; z-index: 2; height: 1px; background: var(--hero-fg);
+  opacity: .25; margin: 28px 0; }
+
+/* 사이드바 하단 글 이동 */
+.aside-nav { position: relative; z-index: 2; display: flex; gap: 10px; margin-top: 26px; }
+.aside-nav button {
+  flex: 1; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15);
+  color: var(--hero-fg); padding: 12px 14px; cursor: pointer; border-radius: 3px;
+  font-family: var(--serif); font-size: 12px; letter-spacing: .1em; text-align: left;
+  transition: background .4s, transform .4s var(--ease);
+}
+.aside-nav button:hover:not(:disabled) { background: rgba(255,255,255,.13); }
+.aside-nav button:disabled { opacity: .3; cursor: default; }
+.aside-nav .dir { display:block; opacity:.6; font-size: 10px; letter-spacing:.25em; margin-bottom: 5px; }
+.aside-nav .t { display:block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ── 우측 본문 ── */
+.reader-main { position: relative; }
+.read-progress {
+  position: fixed; top: 0; left: 380px; right: 0; height: 3px; z-index: 20;
+  background: transparent;
+}
+.read-progress .bar { height: 100%; width: 0; background: var(--gold); transition: width .1s linear; }
+
+.reader-body { max-width: 660px; margin: 0 auto; padding: clamp(70px,11vh,130px) 40px 140px; }
+.reader-excerpt { font-family: var(--display); font-size: clamp(20px,2.4vw,27px);
+  line-height: 1.7; color: var(--forest); margin-bottom: 44px; text-wrap: pretty;
+  border-left: 2px solid var(--wood); padding-left: 22px; font-style: normal; overflow-wrap: anywhere; }
+.reader-body p.para {
+  font-family: var(--body); font-size: clamp(16.5px,1.7vw,18.5px); line-height: 2.15;
+  color: var(--ink); margin-bottom: 26px; text-wrap: pretty;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity .9s var(--ease), transform .9s var(--ease);
+}
+.reader-body p.para.in { opacity: 1; transform: none; }
+.reader-body p.para:first-of-type::first-letter {
+  font-family: var(--display); font-size: 3.6em; float: left; line-height: .8;
+  padding: 8px 14px 0 0; color: var(--forest);
+}
+.reader-end { display:flex; flex-direction: column; align-items:center; gap: 18px;
+  margin-top: 70px; }
+.reader-end .leaf { color: var(--sage); }
+.reader-end .txt { font-family: var(--serif); letter-spacing: .3em; font-size: 12px; color: var(--bark); }
+
+/* ── 반응형: 모바일은 상단 헤더로 ── */
+@media (max-width: 860px) {
+  .reader { grid-template-columns: 1fr; }
+  .reader-aside { position: relative; height: auto; min-height: 420px; padding: 34px 28px 38px; }
+  .aside-author { margin-top: 46px; }
+  .aside-title { margin-top: 22px; }
+  .read-progress { left: 0; }
+  .reader-body { padding: 68px 30px 118px; }
+  .aside-nav { margin-top: 26px; }
+}
+
+@media (max-width: 560px) {
+  .reader-aside {
+    min-height: 470px;
+    padding: 32px 28px 42px;
+  }
+  .back-btn {
+    font-size: 12px;
+    letter-spacing: .14em;
+  }
+  .aside-author {
+    align-items: flex-start;
+  }
+  .aside-author .am {
+    width: 50px;
+    height: 50px;
+  }
+  .aside-author .al {
+    line-height: 1.6;
+  }
+  .aside-title {
+    font-size: clamp(32px, 10vw, 42px);
+    line-height: 1.24;
+  }
+  .aside-meta {
+    letter-spacing: .08em;
+    line-height: 1.7;
+  }
+  .aside-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .aside-nav button {
+    min-height: 66px;
+    padding: 14px 16px;
+  }
+  .reader-body {
+    padding: 72px 28px 116px;
+  }
+  .reader-excerpt {
+    padding-left: 18px;
+    margin-bottom: 46px;
+    line-height: 1.78;
+  }
+  .reader-body p.para {
+    font-size: 17px;
+    line-height: 2.05;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 420px) {
+  .reader-aside {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .reader-body {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .reader-body p.para:first-of-type::first-letter {
+    font-size: 3.2em;
+    padding-right: 12px;
+  }
+}

@@ -1,0 +1,161 @@
+/* ───────────────────────────────────────────────
+   솔솔글방 졸업전시 — 디자인 토큰 & 베이스
+   세리프 · 톤다운 초록/갈색 · 숲 · 종이결
+   ─────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Song+Myung&family=Gowun+Batang:wght@400;700&display=swap');
+
+:root {
+  /* 기본 방향 A — 고요한 숲 */
+  --paper:        #f3f1ea;
+  --paper-2:      #ece8dc;
+  --paper-edge:   #e0dccd;
+  --forest-deep:  #25342a;
+  --forest:       #3f5240;
+  --sage:         #7d8a72;
+  --sage-soft:    #9aa890;
+  --bark:         #7a6a52;
+  --wood:         #c9b79c;
+  --ink:          #2a2823;
+  --ink-soft:     #5c574c;
+  --gold:         #b89b5e;
+
+  --hero-bg:      var(--forest-deep);
+  --hero-fg:      #eef0e9;
+  --accent:       var(--forest);
+
+  --serif:        'Nanum Myeongjo', serif;
+  --display:      'Song Myung', 'Nanum Myeongjo', serif;
+  --body:         'Gowun Batang', 'Nanum Myeongjo', serif;
+
+  --maxw:         1180px;
+  --ease:         cubic-bezier(.22,.61,.36,1);
+  --ease-soft:    cubic-bezier(.4,0,.2,1);
+
+  --shadow-soft:  0 18px 50px -28px rgba(37,52,42,.55);
+  --shadow-card:  0 22px 60px -34px rgba(37,52,42,.6);
+}
+
+/* 방향 B — 이끼와 안개 (밝고 부드러운 미스트) */
+[data-theme="mist"] {
+  --paper:        #eef1ea;
+  --paper-2:      #e4eae0;
+  --paper-edge:   #d8e0d4;
+  --forest-deep:  #324a3e;
+  --forest:       #4f6a57;
+  --sage:         #88997f;
+  --sage-soft:    #a6b39c;
+  --bark:         #8a7c63;
+  --wood:         #cdbfa6;
+  --ink:          #2c322c;
+  --ink-soft:     #5a6358;
+  --gold:         #a7a667;
+  --hero-bg:      #3a5447;
+  --hero-fg:      #eef3ec;
+  --accent:       var(--forest);
+}
+
+/* 방향 C — 종이와 잉크 (따뜻한 세피아/필사 느낌) */
+[data-theme="ink"] {
+  --paper:        #f4efe4;
+  --paper-2:      #ece3d2;
+  --paper-edge:   #e3d8c1;
+  --forest-deep:  #2f3a2c;
+  --forest:       #45533c;
+  --sage:         #7e8268;
+  --sage-soft:    #9a9a7e;
+  --bark:         #6f5b3e;
+  --wood:         #c4ab83;
+  --ink:          #2c261c;
+  --ink-soft:     #5f5440;
+  --gold:         #ab8746;
+  --hero-bg:      #2c2419;
+  --hero-fg:      #f1e9d8;
+  --accent:       var(--bark);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  transition: background .8s var(--ease);
+}
+
+/* 종이 결 텍스처 (전역 배경) */
+.paper-grain {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  opacity: .5; mix-blend-mode: multiply;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(122,106,82,.05) 0, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(63,82,64,.05) 0, transparent 40%);
+}
+.paper-grain::after {
+  content: ""; position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: .035;
+}
+
+h1,h2,h3,h4 { font-family: var(--display); font-weight: 400; margin: 0; }
+p { margin: 0; }
+
+::selection { background: var(--sage); color: var(--paper); }
+
+/* 공통 컨테이너 */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
+
+/* 스크롤 등장 */
+.reveal {
+  opacity: 0; transform: translateY(26px);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
+}
+.reveal.in { opacity: 1; transform: none; }
+
+/* 가는 라벨 (한자/영문 캡션 느낌) */
+.eyebrow {
+  font-family: var(--serif);
+  letter-spacing: .42em; text-transform: uppercase;
+  font-size: 11px; color: var(--sage);
+}
+
+/* 얇은 구분선 */
+.hairline {
+  height: 1px; background: var(--paper-edge); border: 0;
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar { width: 11px; }
+::-webkit-scrollbar-track { background: var(--paper); }
+::-webkit-scrollbar-thumb { background: var(--wood); border-radius: 6px; border: 3px solid var(--paper); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; opacity: 1; transform: none; }
+  * { scroll-behavior: auto !important; }
+}
+
+/* 안전망: 애니메이션 타임라인이 정지된 환경(백그라운드 탭/캡처)에서
+   엔트런스 모션이 콘텐츠를 영구히 숨기지 않도록 최종 상태를 강제 표시 */
+html.motion-stalled .reveal,
+html.motion-stalled .hero-title .ch,
+html.motion-stalled .hero-years,
+html.motion-stalled .hero-tag,
+html.motion-stalled .scroll-cue,
+html.motion-stalled .reader-body p.para {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+html.motion-stalled .hero-divider { width: 64px !important; animation: none !important; }
+html.motion-stalled .reader { opacity: 1 !important; animation: none !important; }
+
+/* 반응형 기준 */
+@media (max-width: 720px) {
+  .wrap { padding: 0 20px; }
+}
