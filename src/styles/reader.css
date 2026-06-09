@@ -40,7 +40,8 @@
   position: relative; z-index: 2; margin-top: 26px;
   font-family: var(--display); font-size: clamp(30px,3vw,46px); line-height: 1.18;
   letter-spacing: .01em;
-  overflow-wrap: anywhere;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .aside-meta {
   position: relative; z-index: 2; margin-top: 22px;
@@ -71,13 +72,15 @@
 }
 .read-progress .bar { height: 100%; width: 0; background: var(--gold); transition: width .1s linear; }
 
-.reader-body { max-width: 660px; margin: 0 auto; padding: clamp(70px,11vh,130px) 40px 140px; }
+.reader-body { max-width: 750px; margin: 0 auto; padding: clamp(70px,11vh,130px) 40px 140px; }
 .reader-excerpt { font-family: var(--display); font-size: clamp(20px,2.4vw,27px);
   line-height: 1.7; color: var(--forest); margin-bottom: 44px; text-wrap: pretty;
-  border-left: 2px solid var(--wood); padding-left: 22px; font-style: normal; overflow-wrap: anywhere; }
+  border-left: 2px solid var(--wood); padding-left: 22px; font-style: normal;
+  word-break: keep-all; overflow-wrap: break-word; }
 .reader-body p.para {
   font-family: var(--body); font-size: clamp(16.5px,1.7vw,18.5px); line-height: 2.15;
   color: var(--ink); margin-bottom: 26px; text-wrap: pretty;
+  word-break: keep-all; overflow-wrap: break-word;
   opacity: 0; transform: translateY(16px);
   transition: opacity .9s var(--ease), transform .9s var(--ease);
 }

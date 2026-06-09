@@ -21,6 +21,18 @@ describe('reader layout styles', () => {
     expect(readerCss).toMatch(/\.reader-main\s*\{[^}]*grid-column:\s*2\b/s);
   });
 
+  it('gives desktop essays a wider reading measure and keeps Korean words intact', () => {
+    expect(readerCss).toMatch(/\.reader-body\s*\{[^}]*max-width:\s*750px\b/s);
+    expect(readerCss).toMatch(/\.reader-body\s+p\.para\s*\{[^}]*word-break:\s*keep-all\b/s);
+    expect(readerCss).toMatch(/\.reader-excerpt\s*\{[^}]*word-break:\s*keep-all\b/s);
+    expect(readerCss).not.toMatch(/\.reader-excerpt\s*\{[^}]*overflow-wrap:\s*anywhere\b/s);
+  });
+
+  it('keeps Korean words intact in essay detail titles', () => {
+    expect(readerCss).toMatch(/\.aside-title\s*\{[^}]*word-break:\s*keep-all\b/s);
+    expect(readerCss).not.toMatch(/\.aside-title\s*\{[^}]*overflow-wrap:\s*anywhere\b/s);
+  });
+
   it('returns the essay aside to document flow on narrow screens', () => {
     expect(readerCss).toMatch(/@media\s*\(max-width:\s*860px\)\s*\{[\s\S]*\.reader-aside\s*\{[^}]*position:\s*relative\b/s);
     expect(readerCss).toMatch(/@media\s*\(max-width:\s*860px\)\s*\{[\s\S]*\.reader-aside\s*\{[^}]*width:\s*auto\b/s);
