@@ -38,4 +38,11 @@ describe('reader layout styles', () => {
     expect(readerCss).toMatch(/@media\s*\(max-width:\s*860px\)\s*\{[\s\S]*\.reader-aside\s*\{[^}]*width:\s*auto\b/s);
     expect(readerCss).toMatch(/@media\s*\(max-width:\s*860px\)\s*\{[\s\S]*\.reader-main\s*\{[^}]*grid-column:\s*1\b/s);
   });
+
+  it('keeps mobile essay text centered with symmetric readable gutters', () => {
+    expect(readerCss).toMatch(/@media\s*\(max-width:\s*560px\)\s*\{[\s\S]*\.reader-body\s*\{[^}]*max-width:\s*34rem\b/s);
+    expect(readerCss).toMatch(/@media\s*\(max-width:\s*560px\)\s*\{[\s\S]*\.reader-body\s*\{[^}]*padding-left:\s*30px\b/s);
+    expect(readerCss).toMatch(/@media\s*\(max-width:\s*560px\)\s*\{[\s\S]*\.reader-body\s*\{[^}]*padding-right:\s*30px\b/s);
+    expect(readerCss).toMatch(/@media\s*\(max-width:\s*560px\)\s*\{[\s\S]*\.reader-excerpt\s*\{[^}]*padding-right:\s*18px\b/s);
+  });
 });

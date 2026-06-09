@@ -145,10 +145,15 @@
     padding: 14px 16px;
   }
   .reader-body {
-    padding: 72px 28px 116px;
+    max-width: 34rem;
+    padding-top: 72px;
+    padding-right: 30px;
+    padding-bottom: 116px;
+    padding-left: 30px;
   }
   .reader-excerpt {
     padding-left: 18px;
+    padding-right: 18px;
     margin-bottom: 46px;
     line-height: 1.78;
   }
@@ -165,8 +170,8 @@
     padding-right: 24px;
   }
   .reader-body {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 28px;
+    padding-right: 28px;
   }
   .reader-body p.para:first-of-type::first-letter {
     font-size: 3.2em;
