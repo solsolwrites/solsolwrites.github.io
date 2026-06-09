@@ -63,10 +63,12 @@ function EssayCard({ author, essay, onOpen, delay }: { author: Author; essay: Es
         <div className="veil" />
         <div className="open">글 읽기 →</div>
       </div>
-      <div className="card-meta">
-        <span>{essay.date}</span>
+      <div className="card-info">
+        <div className="card-meta">
+          <span>{essay.date}</span>
+        </div>
+        <h3 className="card-title">{essay.title}</h3>
       </div>
-      <h3 className="card-title">{essay.title}</h3>
       <p className="card-excerpt">{essay.excerpt}</p>
     </article>
   );

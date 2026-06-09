@@ -94,6 +94,23 @@
 .reader-end .leaf { color: var(--sage); }
 .reader-end .txt { font-family: var(--serif); letter-spacing: .3em; font-size: 12px; color: var(--bark); }
 
+/* ── 맨 위로 버튼 ── */
+.scroll-top-btn {
+  position: fixed; right: 24px; bottom: 36px; z-index: 30;
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--forest); color: var(--hero-fg);
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 20px -4px rgba(37,52,42,.45);
+  animation: scrollTopIn .35s var(--ease);
+  transition: transform .35s var(--ease);
+}
+.scroll-top-btn:hover { transform: translateY(-4px); }
+@keyframes scrollTopIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
 /* ── 반응형: 모바일은 상단 헤더로 ── */
 @media (max-width: 860px) {
   .reader { grid-template-columns: 1fr; }
