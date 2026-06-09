@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import type { Author, Essay } from '../content';
+import type { Author, Essay, EssayParagraph } from '../content';
 import { AuthorMotif, CornerSprig } from './Forest';
 
 type ReaderProps = {
@@ -10,6 +10,14 @@ type ReaderProps = {
   onBack: () => void;
   onNav: (essay: Essay) => void;
 };
+
+function renderParagraph(paragraph: EssayParagraph) {
+  if (typeof paragraph === 'string') return paragraph;
+
+  return paragraph.map((segment, index) => (
+    segment.type === 'emphasis' ? <em key={index}>{segment.text}</em> : <span key={index}>{segment.text}</span>
+  ));
+}
 
 export function Reader({ essay, author, prev, next, onBack, onNav }: ReaderProps) {
   const mainRef = useRef<HTMLDivElement>(null);
@@ -83,7 +91,7 @@ export function Reader({ essay, author, prev, next, onBack, onNav }: ReaderProps
         <div className="reader-body">
           <p className="reader-excerpt">{essay.excerpt}</p>
           {essay.paragraphs.map((paragraph, index) => (
-            <p className="para" key={index}>{paragraph}</p>
+            <p className="para" key={index}>{renderParagraph(paragraph)}</p>
           ))}
           <div className="reader-end">
             <svg className="leaf" viewBox="0 0 40 40" width="34" height="34">

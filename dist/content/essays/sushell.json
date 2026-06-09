@@ -1,0 +1,47 @@
+[
+  {
+    "id": "s1",
+    "author": "sushell",
+    "title": "유리병에 담은 오후",
+    "date": "2024.05",
+    "read": 6,
+    "excerpt": "빛이 가장 낮게 드는 시간, 나는 오후를 유리병에 담는 연습을 한다.",
+    "body": "sushell/s1.md"
+  },
+  {
+    "id": "s2",
+    "author": "sushell",
+    "title": "겨울 창가의 습관",
+    "date": "2023.12",
+    "read": 5,
+    "excerpt": "추운 계절일수록 창은 더 많은 이야기를 비춘다.",
+    "body": "sushell/s2.md"
+  },
+  {
+    "id": "s3",
+    "author": "sushell",
+    "title": "이름을 부르는 일",
+    "date": "2023.06",
+    "read": 6,
+    "excerpt": "무언가의 이름을 안다는 것은, 그것을 사랑할 준비가 되었다는 뜻이다.",
+    "body": "sushell/s3.md"
+  },
+  {
+    "id": "s4",
+    "author": "sushell",
+    "title": "걷는 동안의 생각들",
+    "date": "2022.09",
+    "read": 5,
+    "excerpt": "막힌 문장은 책상이 아니라 길 위에서 풀린다.",
+    "body": "sushell/s4.md"
+  },
+  {
+    "id": "s5",
+    "author": "sushell",
+    "title": "오래된 노트",
+    "date": "2021.11",
+    "read": 6,
+    "excerpt": "첫 장을 다시 펼치니, 그때의 내가 낯선 사람처럼 거기 있었다.",
+    "body": "sushell/s5.md"
+  }
+]

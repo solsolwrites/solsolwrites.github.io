@@ -1,11 +1,26 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import exhibition from '../../public/content/exhibition.json';
-import type { Exhibition } from '../content';
+import latteEssays from '../../public/content/essays/latte.json';
+import miyaEssays from '../../public/content/essays/miya.json';
+import sushellEssays from '../../public/content/essays/sushell.json';
+import type { Essay, Exhibition } from '../content';
 import { Home } from './Home';
 import { Reader } from './Reader';
 
-const content = exhibition as Exhibition;
+type EssayManifestItem = Omit<Essay, 'paragraphs'> & { body: string };
+
+function toEssayFixture(essay: EssayManifestItem): Essay {
+  return {
+    ...essay,
+    paragraphs: [],
+  };
+}
+
+const content: Exhibition = {
+  ...exhibition,
+  essays: [...sushellEssays, ...latteEssays, ...miyaEssays].map((essay) => toEssayFixture(essay)),
+};
 
 window.scrollTo = vi.fn();
 
@@ -37,5 +52,21 @@ describe('online exhibition screens', () => {
     expect(screen.queryByText(`솔솔글방 졸업전시 · ${author.name}`)).not.toBeInTheDocument();
     expect(screen.queryByText(`읽는 시간 ${essay.read}분`)).not.toBeInTheDocument();
     expect(screen.getByText(essay.date)).toBeInTheDocument();
+  });
+
+  it('renders markdown emphasis inside essay paragraphs', () => {
+    const essay: Essay = {
+      ...content.essays[0],
+      paragraphs: [[
+        { type: 'text', text: '본문의 ' },
+        { type: 'emphasis', text: '기울임' },
+        { type: 'text', text: ' 표현' },
+      ]],
+    };
+    const author = content.authors.find((item) => item.id === essay.author) ?? content.authors[0];
+
+    render(<Reader essay={essay} author={author} prev={null} next={null} onBack={vi.fn()} onNav={vi.fn()} />);
+
+    expect(screen.getByText('기울임').tagName).toBe('EM');
   });
 });

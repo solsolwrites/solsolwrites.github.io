@@ -1,0 +1,47 @@
+[
+  {
+    "id": "l1",
+    "author": "latte",
+    "title": "순이와 혁이",
+    "date": "2022.02",
+    "read": 5,
+    "excerpt": "뜨겁던 것이 식어가는 동안, 나는 가장 정직한 글을 쓴다.",
+    "body": "latte/l1.md"
+  },
+  {
+    "id": "l2",
+    "author": "latte",
+    "title": "비 오는 화요일",
+    "date": "2023.08",
+    "read": 5,
+    "excerpt": "비는 약속도 없이 찾아와, 하루의 속도를 바꿔놓는다.",
+    "body": "latte/l2.md"
+  },
+  {
+    "id": "l3",
+    "author": "latte",
+    "title": "엄마의 부엌",
+    "date": "2023.01",
+    "read": 6,
+    "excerpt": "엄마의 부엌에는 계량이 없었다. 대신 손끝의 기억이 있었다.",
+    "body": "latte/l3.md"
+  },
+  {
+    "id": "l4",
+    "author": "latte",
+    "title": "낯선 도시에서",
+    "date": "2022.07",
+    "read": 5,
+    "excerpt": "아무도 나를 모르는 곳에서, 나는 비로소 나를 마주했다.",
+    "body": "latte/l4.md"
+  },
+  {
+    "id": "l5",
+    "author": "latte",
+    "title": "작은 식물의 안부",
+    "date": "2021.10",
+    "read": 5,
+    "excerpt": "매일 아침 잎의 안부를 묻는 일이, 나의 하루를 시작하게 한다.",
+    "body": "latte/l5.md"
+  }
+]
