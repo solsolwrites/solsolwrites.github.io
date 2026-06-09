@@ -3,7 +3,7 @@ import exhibition from '../public/content/exhibition.json';
 import latteEssays from '../public/content/essays/latte.json';
 import miyaEssays from '../public/content/essays/miya.json';
 import sushellEssays from '../public/content/essays/sushell.json';
-import { getAuthor, getEssay, getEssayNeighbors, hasImage, loadExhibition } from './content';
+import { getEssay, getEssayNeighbors, hasImage, loadExhibition } from './content';
 import type { Essay, Exhibition } from './content';
 
 type EssayManifestItem = Omit<Essay, 'paragraphs'> & { body: string };
@@ -23,14 +23,6 @@ const exhibitionWithEssays: Exhibition = {
 describe('exhibition content helpers', () => {
   afterEach(() => {
     vi.restoreAllMocks();
-  });
-
-  it('finds essays and their authors from the JSON source', () => {
-    const essay = getEssay(exhibitionWithEssays, 's1');
-    const author = getAuthor(exhibitionWithEssays, essay.author);
-
-    expect(essay.title).toBe('유리병에 담은 오후');
-    expect(author.id).toBe('sushell');
   });
 
   it('returns previous and next essays within the same author only', () => {

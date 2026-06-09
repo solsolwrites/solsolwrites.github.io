@@ -65,7 +65,6 @@ export function Reader({ essay, author, prev, next, onBack, onNav }: ReaderProps
             {author.image?.src ? <img className="am" src={author.image.src} alt={`${author.name} 이미지`} /> : <AuthorMotif motif={author.motif} className="am" />}
             <div>
               <div className="an">{author.name}</div>
-              <div className="al">{author.line}</div>
             </div>
           </div>
           <h1 className="aside-title">{essay.title}</h1>

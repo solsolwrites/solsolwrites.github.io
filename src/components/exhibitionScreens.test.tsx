@@ -41,6 +41,7 @@ describe('online exhibition screens', () => {
     expect(screen.queryByText('솔솔글방 5년의 기록')).not.toBeInTheDocument();
     expect(screen.queryByText('S C R O L L')).not.toBeInTheDocument();
     expect(screen.queryByText('FIVE PIECES · 다섯 편')).not.toBeInTheDocument();
+    expect(screen.queryByText(`${content.essays[0].read}분`)).not.toBeInTheDocument();
   });
 
   it('keeps the reader focused on the essay without exhibition kicker or reading time', () => {

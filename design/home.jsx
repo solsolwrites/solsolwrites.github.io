@@ -63,7 +63,6 @@ function EssayCard({ essay, motif, onOpen, delay }) {
       </div>
       <div className="card-meta">
         <span>{essay.date}</span>
-        <span>{essay.read}분</span>
       </div>
       <h3 className="card-title">{essay.title}</h3>
       <p className="card-excerpt">{essay.excerpt}</p>

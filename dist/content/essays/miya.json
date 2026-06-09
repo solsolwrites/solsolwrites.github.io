@@ -2,46 +2,64 @@
   {
     "id": "m1",
     "author": "miya",
-    "title": "고양이와 새벽",
-    "date": "2024.04",
+    "title": "그 많던 코스모스는 누가 다 땄을까",
+    "date": "2026.05",
     "read": 5,
-    "excerpt": "세상이 가장 조용한 시간, 고양이만이 나의 깨어 있음을 안다.",
+    "excerpt": "",
     "body": "miya/m1.md"
   },
   {
     "id": "m2",
     "author": "miya",
-    "title": "버려진 정원",
-    "date": "2023.10",
+    "title": "같이 쓰러져주는 사이",
+    "date": "2024.09",
     "read": 6,
-    "excerpt": "사람이 떠난 정원에서, 식물들은 비로소 자유로워 보였다.",
+    "excerpt": "",
     "body": "miya/m2.md"
   },
   {
     "id": "m3",
     "author": "miya",
-    "title": "편지를 쓰지 못하고",
-    "date": "2023.02",
+    "title": "25년 봄 정동진 여행기 (2) 안녕, 정동진",
+    "date": "2025.04",
     "read": 5,
-    "excerpt": "부치지 못한 편지들이 서랍 속에서 천천히 익어간다.",
+    "excerpt": "",
     "body": "miya/m3.md"
   },
   {
     "id": "m4",
     "author": "miya",
-    "title": "바다까지 가는 길",
-    "date": "2022.06",
+    "title": "굵은 비가 내리는 날들의 추억",
+    "date": "2025.05",
     "read": 6,
-    "excerpt": "바다는 보이지 않아도, 냄새로 먼저 다가온다.",
+    "excerpt": "",
     "body": "miya/m4.md"
   },
   {
     "id": "m5",
     "author": "miya",
-    "title": "마지막 페이지",
-    "date": "2026.05",
+    "title": "편식쟁이가 사는 법",
+    "date": "2024.02",
     "read": 6,
-    "excerpt": "끝을 쓰는 일은, 새로운 시작의 첫 문장을 고르는 일이기도 하다.",
+    "excerpt": "",
     "body": "miya/m5.md"
+  },
+  {
+    "id": "m6",
+    "author": "miya",
+    "title": "true를 true라 하지 못하고",
+    "date": "2022.03",
+    "read": 6,
+    "excerpt": "",
+    "body": "miya/m6.md"
+  },
+  {
+    "id": "m7",
+    "author": "miya",
+    "title": "제 꿈 이야기, 들어보실래요?",
+    "date": "2024.05",
+    "read": 6,
+    "excerpt": "",
+    "body": "miya/m7.md"
   }
 ]
