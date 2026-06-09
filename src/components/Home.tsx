@@ -103,7 +103,7 @@ export function Home({ exhibition, onOpen }: HomeProps) {
           <AuthorBlock key={author.id} author={author} index={index} essays={exhibition.essays.filter((essay) => essay.author === author.id)} onOpen={onOpen} />
         ))}
       </div>
-      <footer className="footer wrap">솔솔글방 · {exhibition.intro.years} · 천천히, 그러나 멈추지 말고</footer>
+      <footer className="footer wrap">솔솔글방 · {exhibition.intro.years}</footer>
     </div>
   );
 }
