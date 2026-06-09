@@ -97,7 +97,6 @@ export function Reader({ essay, author, prev, next, onBack, onNav }: ReaderProps
               <path d="M20 4 C30 12 32 26 20 38 C8 26 10 12 20 4 Z" fill="currentColor" fillOpacity="0.35" />
               <path d="M20 7 L20 35" stroke="currentColor" strokeWidth="1" strokeOpacity="0.5" />
             </svg>
-            <div className="txt">끝</div>
           </div>
         </div>
       </main>
