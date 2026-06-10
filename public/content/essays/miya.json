@@ -9,13 +9,13 @@
     "body": "miya/m1.md"
   },
   {
-    "id": "m4",
+    "id": "m2",
     "author": "miya",
     "title": "굵은 비가 내리는 날들의 추억",
     "date": "2025.05",
     "read": 6,
     "excerpt": "",
-    "body": "miya/m4.md"
+    "body": "miya/m2.md"
   },
   {
     "id": "m3",
@@ -27,28 +27,19 @@
     "body": "miya/m3.md"
   },
   {
-    "id": "m2",
+    "id": "m4",
     "author": "miya",
     "title": "같이 쓰러져주는 사이",
     "date": "2024.09",
     "read": 6,
     "excerpt": "",
-    "body": "miya/m2.md"
-  },
-  {
-    "id": "m7",
-    "author": "miya",
-    "title": "제 꿈 이야기, 들어보실래요?",
-    "date": "2024.05",
-    "read": 6,
-    "excerpt": "",
-    "body": "miya/m7.md"
+    "body": "miya/m4.md"
   },
   {
     "id": "m5",
     "author": "miya",
-    "title": "편식쟁이가 사는 법",
-    "date": "2024.02",
+    "title": "제 꿈 이야기, 들어보실래요?",
+    "date": "2024.05",
     "read": 6,
     "excerpt": "",
     "body": "miya/m5.md"
@@ -56,10 +47,19 @@
   {
     "id": "m6",
     "author": "miya",
+    "title": "편식쟁이가 사는 법",
+    "date": "2024.02",
+    "read": 6,
+    "excerpt": "",
+    "body": "miya/m6.md"
+  },
+  {
+    "id": "m7",
+    "author": "miya",
     "title": "true를 true라 하지 못하고",
     "date": "2022.03",
     "read": 6,
     "excerpt": "",
-    "body": "miya/m6.md"
+    "body": "miya/m7.md"
   }
 ]

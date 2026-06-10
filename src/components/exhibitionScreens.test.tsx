@@ -33,7 +33,7 @@ describe('online exhibition screens', () => {
     render(<Home exhibition={content} onOpen={vi.fn()} />);
 
     expect(screen.getByText('서로의 글을 가장 먼저 읽어준 다섯 해')).toBeInTheDocument();
-    expect(screen.getByText(/2021년 가을, 양다솔 작가님의 북토크/)).toBeInTheDocument();
+    expect(screen.getByText(/2021년 가을, 망원동 이후북스에서 있었던 양다솔 작가님의 북토크/)).toBeInTheDocument();
     expect(screen.getByText(/서로의 열렬한 독자/)).toBeInTheDocument();
 
     expect(screen.queryByText('溫')).not.toBeInTheDocument();

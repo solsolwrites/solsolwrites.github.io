@@ -20,9 +20,24 @@ const exhibitionWithEssays: Exhibition = {
   essays: [...sushellEssays, ...latteEssays, ...miyaEssays].map((essay) => toEssayFixture(essay)),
 };
 
+function expectNewestFirstIds(essays: EssayManifestItem[], prefix: string) {
+  expect(essays.map((essay) => essay.id)).toEqual(
+    essays.map((_, index) => `${prefix}${index + 1}`),
+  );
+  expect(essays.map((essay) => essay.body)).toEqual(
+    essays.map((_, index) => `${essays[0].author}/${prefix}${index + 1}.md`),
+  );
+}
+
 describe('exhibition content helpers', () => {
   afterEach(() => {
     vi.restoreAllMocks();
+  });
+
+  it('keeps per-author essay ids newest-first with matching body filenames', () => {
+    expectNewestFirstIds(latteEssays, 'l');
+    expectNewestFirstIds(miyaEssays, 'm');
+    expectNewestFirstIds(sushellEssays, 's');
   });
 
   it('returns previous and next essays within the same author only', () => {

@@ -1,30 +1,30 @@
 [
   {
-    "id": "l7",
+    "id": "l1",
     "author": "latte",
     "title": "마마",
     "date": "2026.05",
     "read": 5,
     "excerpt": "",
-    "body": "latte/l7.md"
+    "body": "latte/l1.md"
   },
   {
-    "id": "l3",
+    "id": "l2",
     "author": "latte",
     "title": "불 끄고 자자",
     "date": "2026.01",
     "read": 6,
     "excerpt": "",
-    "body": "latte/l3.md"
+    "body": "latte/l2.md"
   },
   {
-    "id": "l6",
+    "id": "l3",
     "author": "latte",
     "title": "핸드폰을 두고 온 날에는",
     "date": "2025.06",
     "read": 5,
     "excerpt": "",
-    "body": "latte/l6.md"
+    "body": "latte/l3.md"
   },
   {
     "id": "l4",
@@ -45,21 +45,21 @@
     "body": "latte/l5.md"
   },
   {
-    "id": "l2",
+    "id": "l6",
     "author": "latte",
     "title": "또 오해영 덕분에",
     "date": "2022.09",
     "read": 5,
     "excerpt": "",
-    "body": "latte/l2.md"
+    "body": "latte/l6.md"
   },
   {
-    "id": "l1",
+    "id": "l7",
     "author": "latte",
     "title": "순이와 혁이",
     "date": "2022.02",
     "read": 5,
     "excerpt": "",
-    "body": "latte/l1.md"
+    "body": "latte/l7.md"
   }
 ]
