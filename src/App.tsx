@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { getAuthor, getEssay, getEssayNeighbors, loadExhibition } from './content';
 import type { Essay, Exhibition } from './content';
 import { essayPath, homePath, parseHashRoute } from './routing';
+import { trackPageView } from './analytics';
 import { Home } from './components/Home';
 import { Reader } from './components/Reader';
 
@@ -84,6 +85,17 @@ export function App() {
       return null;
     }
   }, [route, state]);
+
+  useEffect(() => {
+    if (state.status !== 'ready') return;
+
+    if (route.view === 'essay' && detail) {
+      trackPageView(`${detail.essay.title} | 솔솔글방 온라인 전시`);
+      return;
+    }
+
+    trackPageView('솔솔글방 온라인 전시');
+  }, [detail, route.view, state.status]);
 
   const openEssay = (essay: Essay) => {
     window.location.hash = essayPath(essay.id);
